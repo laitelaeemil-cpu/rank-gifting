@@ -1,0 +1,2352 @@
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#1d1d1d">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <title>Fakepixel &bull; Login</title>
+    <link rel="shortcut icon" href="https://dunb17ur4ymx4.cloudfront.net/webstore/favicons/31152c88e6d4adfa2aac9190ef2f915056c98ced.png">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        
+        _gaq.push(['_setAccount', 'UA-36735942-3']);
+        _gaq.push(['_trackPageview']);
+        
+                
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>/* Top Donator */
+
+.top-donator .ign {
+  font-weight: 600;
+}
+
+/* Sidebar */
+.user-nav{
+  background-color:#161616;
+  padding:1rem 0;
+  width:100%;
+  border-radius:.25rem;
+  margin-bottom:1.2rem
+}
+
+.user-nav-link{
+  font-size:1.2rem;
+  font-weight:600;
+  padding:1rem 1.5rem;
+  display:block;
+  color:#bdbdbd;
+  border-left:5px solid transparent
+}
+.user-nav-link:hover{
+  background-color:rgba(255,255,255,.03);
+  color:#bdbdbd
+  
+}
+.user-nav-link.active{
+  color:#fff
+}
+
+
+.featured-package .name {
+  color: rgba(255,255,255,0.8);
+  font-weight: 500;
+}
+
+.package-description {
+  max-height: 500px;
+  overflow-y: scroll;
+}
+
+.footer {
+  z-index: 1000;
+}
+
+.discount {
+  color: #dc3545;
+  font-weight: 500;
+  text-decoration: line-through;
+}
+
+.modal-body ::-webkit-scrollbar-track,.modal-body ::-webkit-scrollbar-corner{background:#181818 !important}
+
+.modal-body ::-webkit-scrollbar-thumb{background:#252525 !important}
+
+.modal-body ::-webkit-scrollbar-thumb:hover{background:#353535 !important}
+
+.package-footer {
+  border-top: 2px solid rgba(255,255,255,0.05);
+}
+
+
+.header-top-row {
+  position: absolute;
+  top: 1.5rem;
+  left: 7%;
+  right: 7%;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-header-new {
+  border-radius: 0.75rem;
+  background-color: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.8);
+  padding: 0.65rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.btn-header-new i {
+  color: #FFF;
+  font-size: 1rem;
+  display: inline-block;
+  padding-right: 0.2rem;
+}
+
+.btn-header-new:hover, .btn-header-new:focus {
+  filter: brightness(75%);
+  color: rgba(255,255,255,0.8);
+}
+
+.cart-badge {
+  background-color: rgba(255,255,255,0.15);
+  position: relative;
+  padding: 0.25rem 0.5rem;
+  margin-left: 0.3rem;
+  border-radius: 3rem;
+  color: #FFF;
+}
+
+.close {
+  color: #FFF !important;
+}
+
+.username-box {
+  background-color: #161616;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  height: 100px;
+}
+
+.username-box img {
+  height: 200px;
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+.username-box .text {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.8);
+  margin-top: 1.5rem;
+  margin-left: 1.3rem;
+}
+
+.username-box .btn-log {
+  font-size: 0.6rem;
+  padding: 0.3rem 0.75rem;
+}
+
+.store-home {
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+.store-welcome {
+      color: rgba(255,255,255,0.2);
+  font-style: italic;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+
+.store-name {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: rgba(255,255,255,0.85);
+}
+
+.cart-menu {
+opacity: 0;
+display: none;
+left: 0;
+right: 0;
+top: 0;
+margin: 5rem auto;
+width: 45rem;
+position: fixed;
+z-index: 200000;
+transition: 0.25s;
+background-color: #101010;
+}
+
+.cart-menu .total, .cart-checkout {
+  margin-top: 3rem
+}
+
+.cart-menu .cart-header {
+display: flex;
+padding: 1.5rem 2.5rem;
+}
+
+.cart-menu.active {
+display: block;
+opacity: 1;
+}
+
+.cart-menu .cart-header .cart-header-text {
+font-weight: 600;
+font-size: 1.4rem;
+flex-grow: 1;
+}
+
+.cart-body {
+  padding: 1.5rem 2.5rem;
+}
+
+.cart-menu .name {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+
+/*---------- General ----------*/
+
+@media (min-width: 992px) {
+.modal-md {
+  max-width: 600px;
+}
+}
+
+.swal2-styled.swal2-confirm:focus {
+box-shadow: none !important;
+}
+
+a {
+text-decoration: none !important;
+}
+
+@media (min-width: 768px) {
+.mobile_only {
+  display: none;
+}
+}
+
+@media (max-width: 767px) {
+.col-inv {
+  display: none;
+}
+
+html {
+  font-size: 90%;
+}
+}
+
+img {
+max-width: 100%;
+}
+
+.username {
+font-weight: 500;
+}
+
+.username:hover {
+filter: brightness(80%);
+}
+
+body {
+font-family: "Montserrat", sans-serif;
+}
+
+.avatar-img, .avatar img {
+border-radius: 0.15rem;
+}
+
+.input-group-text {
+background-color: rgba(255, 255, 255, 0.15) !important;
+color: rgb(189, 189, 189) !important;
+font-weight: 500;
+}
+
+#tsparticles {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:visited,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+-webkit-box-shadow: 0 0 0 30px #202020 inset !important;
+}
+
+input:-webkit-autofill{
+-webkit-text-fill-color: rgb(189 189 189) !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/*---------- Containers ----------*/
+
+@media (min-width: 768px) {
+.container {
+  max-width: 680px;
+}
+}
+@media (min-width: 850px) {
+.container {
+  max-width: 750px;
+}
+}
+@media (min-width: 992px) {
+.container {
+  max-width: 900px;
+}
+}
+@media (min-width: 1100px) {
+.container {
+  max-width: 1000px;
+}
+}
+@media (min-width: 1200px) {
+.container {
+  max-width: 1100px;
+}
+}
+@media (min-width: 1500px) {
+.container {
+  max-width: 1200px;
+}
+}
+@media (min-width: 1600px) {
+.container {
+  max-width: 1300px;
+}
+}
+@media (min-width: 1700px) {
+.container {
+  max-width: 1400px;
+}
+}
+
+/*---------- Social Media Icons ----------*/
+
+.social {
+transform: scale(0.8);
+transition-duration: 0.5s;
+}
+
+/*---------- Frames ----------*/
+
+.avatar-img {
+max-width: none;
+}
+
+/*---------- Transitions ----------*/
+
+a,
+.btn,
+.spoiler-toggle,
+.spoiler-title,
+.alert-dismissible .close,
+.navbar-toggler {
+transition: 0.25s;
+}
+
+.swal2-styled.swal2-confirm {
+transition: 0.25s !important;
+}
+
+/*---------- Scrollbar ----------*/
+
+::-webkit-scrollbar {
+width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+border-radius: 10px;
+}
+
+/*---------- Dark Mode ----------*/
+
+.dark .form-control::-webkit-input-placeholder, .dark .form-control::-ms-input-placeholder, .dark .form-control:-ms-input-placeholder, .dark .form-control::-moz-placeholder, .dark .form-control::placeholder {
+color: rgba(255, 255, 255, 0.5);
+}
+
+.dark .swal2-modal {
+background-color: #181818;
+}
+
+.dark .swal2-title {
+color: rgba(255, 255, 255, 0.75);
+}
+.dark .swal2-content {
+color: rgba(255, 255, 255, 0.5);
+}
+
+.dark body {
+background-color: #101010;
+color: rgb(189, 189, 189);
+}
+
+.dark .card {
+background-color: #161616;
+}
+
+.dark .dropdown-menu,
+.dark .dropdown-item:focus,
+.dark .dropdown-item:active,
+.dark .modal-body,
+.dark .ui-menu-item,
+.dark .ui-menu-item-wrapper,
+.dark .ui-menu,
+.dark .ui-menu-item:hover,
+.dark .ui-menu-item-wrapper:hover {
+background-color: #181818;
+color: rgb(189, 189, 189);
+}
+
+.dark .token {
+background-color: #181818 !important;
+color: rgb(189, 189, 189);
+}
+
+.dark .dropdown-item,
+.dark #chatbox .float-right a,
+.dark table,
+.dark .token .close {
+color: rgb(189, 189, 189) !important;
+}
+
+.dark .breadcrumb,
+.dark .card-footer,
+.dark textarea,
+.dark textarea:focus,
+.dark input,
+.dark input:focus,
+.dark select,
+.dark select:hover,
+.dark option,
+.dark option:hover,
+.dark .btn-secondary,
+.dark .modal-footer,
+.dark .spoiler-text,
+.dark .spoiler-content,
+.dark .tokenfield,
+.dark .form-control,
+.dark .btn-light {
+background-color: #202020 !important;
+color: rgb(189, 189, 189) !important;
+}
+
+.dark .popover,
+.dark .popover-body {
+background-color: #252525 !important;
+border-color: #252525 !important;
+color: rgb(189, 189, 189) !important;
+}
+
+.dark .btn-secondary,
+.dark .modal-content,
+.dark .ui-menu-item,
+.dark .ui-menu-item-wrapper,
+.dark .ui-menu,
+.dark .ui-menu-item:hover,
+.dark .ui-menu-item-wrapper:hover,
+.dark .tokenfield,
+.dark .tokenfield:focus,
+.dark .tokenfield:hover,
+.dark .tokenfield.focus,
+.dark .token,
+.dark .btn-light {
+border: none !important;
+}
+
+.dark .btn-secondary.profile-btn {
+background-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+.dark .pagination .page-item .page-link {
+background-color: #161616;
+color: rgb(189, 189, 189);
+}
+
+.dark .modal-header,
+.dark .pagination .page-item .page-link,
+.dark .forum-col,
+.dark .dropdown-divider,
+.dark .modal-footer {
+border-color: #161616;
+}
+
+.dark .btn-secondary:hover {
+background-color: #404040 !important;
+}
+
+.dark hr {
+border-top: 1px solid #303030;
+}
+
+.dark ::-webkit-scrollbar-track, .dark ::-webkit-scrollbar-corner {
+background: #101010;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+background: #181818;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+background: #252525;
+}
+
+.dark .white-link,
+.dark .white-link:focus {
+color: #fff !important;
+}
+
+.dark .white-link:hover {
+color: #d0d0d0 !important;
+}
+
+.dark .grey-link,
+.dark .grey-link:focus,
+.dark .grey-link:hover,
+.dark .message-people a,
+.dark .message-people a:focus,
+.dark .message-people a:hover {
+color: rgb(189, 189, 189) !important;
+}
+
+.dark textarea,
+.dark input,
+.dark select,
+.dark .form-control,
+.dark .input-group-text {
+border: none !important;
+box-shadow: none !important;
+}
+
+.dark .input-group-text {
+background-color: #333333;
+}
+
+.dark .select2-container--default .select2-selection--multiple {
+background-color: #333333;
+border: none;
+}
+
+.dark
+.select2-container--default
+.select2-selection--multiple
+.select2-selection__choice {
+background-color: #404040;
+border: none;
+}
+
+.dark .select2-container--default .select2-results__option--selected {
+background-color: #333333;
+}
+
+.dark
+.select2-container--default
+.select2-selection--multiple
+.select2-selection__choice__remove:hover,
+.dark
+.select2-container--default
+.select2-selection--multiple
+.select2-selection__choice__remove:focus {
+background-color: #444444;
+color: rgb(189, 189, 189);
+}
+
+.dark
+.select2-container--default
+.select2-selection--multiple
+.select2-selection__choice__remove {
+border-right: none;
+}
+
+.dark .select2-dropdown {
+background-color: #404040;
+border: none;
+}
+
+.dark .progress {
+background-color: rgba(255, 255, 255, 0.1);
+}
+
+/*----------------------------*/
+/*--- Krashe85 ---*/
+/*--- 25438 ---*/
+/*--- 99828 ---*/
+/*--- 1707589987 ---*/
+/*--- f3a372f0aaf23710fa4334ae4ce9356f ---*/
+/*--- ed13c7d618ff9dee514a9342d1819644 ---*/
+/*---------------------------*/
+
+/*---------- Popover ----------*/
+
+.popover .arrow {
+display: none;
+}
+
+.popover {
+max-width: 100% !important;
+width: auto;
+}
+
+.popover-flex {
+display: flex;
+padding: 0.5rem;
+}
+
+.popover-user-info {
+margin-left: 15px;
+flex-grow: 1;
+}
+
+.popover-username {
+font-size: 1.2rem;
+margin-bottom: 3px;
+}
+
+.popover-avatar img {
+height: 60px;
+margin-top: 5px;
+}
+
+.popover-user {
+padding-right: 5px;
+}
+
+
+/*---------- Buttons ----------*/
+
+.button-checkbox > .active {
+border: none;
+}
+
+.btn-secondary,
+.btn-secondary:focus,
+.btn-secondary:active {
+background: #696969;
+border: none;
+}
+
+.btn-secondary:hover {
+background: #585858;
+border: none;
+}
+
+.btn:focus {
+box-shadow: none !important;
+}
+
+.btn-theme,
+.btn-secondary,
+.btn-info {
+font-weight: 500;
+font-size: 0.85rem;
+padding: 0.5rem 1rem;
+border: none !important;
+}
+
+.sm-btns .btn {
+padding: 0.25rem 0.75rem;
+}
+
+.btn-theme,
+.btn-theme:hover {
+color: #fff !important;
+}
+
+/*---------- Navbar ----------*/
+
+button:focus {
+outline: none !important;
+}
+
+/*---------- Header Button Box ----------*/
+
+.dropdown-menu {
+padding: 0;
+border: none;
+box-shadow: 0 0 10px 0 #1b1b1b;
+}
+
+.dropdown-item {
+padding: 0.5rem 1rem;
+}
+
+.dropdown-item.d-header {
+border-bottom: 2px solid rgba(255, 255, 255, 0.03);
+font-size: 1.2rem;
+font-weight: 500;
+}
+
+.dropdown-item.d-header i {
+margin-left: 15px;
+float: right;
+margin-top: 0.25rem;
+}
+
+.dropdown-item.d-header:hover {
+background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.dropdown-item.item-small {
+font-size: 0.8rem;
+font-weight: 500;
+color: rgba(255, 255, 255, 0.3);
+}
+
+.dark .dropdown-item:hover {
+background-color: rgba(255, 255, 255, 0.03);
+}
+.dropdown-item:hover.noclick {
+background-color: transparent;
+}
+
+/*---------- Header ----------*/
+
+.header {
+background-size: cover !important;
+width: 100%;
+position: relative;
+}
+
+.header:before {
+bottom: -5px;
+}
+
+.header:after,
+.header:before {
+content: "";
+position: absolute;
+top: 0;
+right: 0;
+left: 0;
+z-index: 10;
+display: block;
+}
+
+.header:after {
+bottom: auto;
+}
+
+.top-container {
+margin-top: -100px;
+z-index: 101 !important;
+}
+
+.container {
+position: relative;
+z-index: 100;
+}
+
+.color-overlay {
+z-index: 3;
+}
+
+@-webkit-keyframes pulse {
+0% {
+  transform: translateY(0px);
+}
+50% {
+  transform: translateY(5px);
+}
+100% {
+  transform: translateY(0px);
+}
+}
+
+@keyframes pulse {
+0% {
+  transform: translateY(0px);
+}
+50% {
+  transform: translateY(5px);
+}
+100% {
+  transform: translateY(0px);
+}
+}
+.logo {
+z-index: 10;
+transition: 0.25s;
+}
+
+.logo-ds-flex {
+display: flex;
+left: 0;
+top: 0;
+right: 0;
+position: absolute;
+max-width: 100%;
+width: 100%;
+z-index: 10;
+justify-content: center;
+}
+
+.logo-container {
+z-index: 1;
+height: fit-content;
+}
+
+.logo:hover {
+filter: brightness(90%);
+}
+
+.animated-logo {
+animation: pulse 3s infinite;
+}
+
+/*---------- Discord and Server Status Texts ----------*/
+
+.status-icon,
+.discord-icon {
+z-index: 1000;
+display: block;
+position: absolute;
+top: 15%;
+}
+
+.status-icon {
+right: 18%;
+width: 30px;
+}
+
+.discord-icon {
+right: 7%;
+width: 35px;
+}
+
+@media (min-width: 550px) {
+.status-icon {
+  right: 11%;
+}
+.discord-icon {
+  right: 3%;
+}
+}
+
+@media (min-width: 993px) {
+.status-icon,
+.discord-icon {
+  display: none;
+}
+}
+
+.navbar-bottom .discord-icon,
+.navbar-bottom .status-icon {
+top: 29%;
+}
+
+.status-text {
+margin-right: 50px;
+color: #afa6a6;
+text-align: right;
+z-index: 1000;
+transition: 0.5s;
+display: flex;
+float: right;
+}
+
+.status-box-container {
+flex: 1;
+z-index: 1;
+width: fit-content;
+height: fit-content;
+}
+
+.status-text .icon:after {
+height: 4px;
+border-radius: 10px;
+margin-bottom: 10px;
+content: "";
+position: absolute;
+top: 115%;
+left: 35%;
+width: 50%;
+transition: 0.25s;
+box-shadow: 0 0 10px 0;
+}
+
+.discord-text .icon:after {
+height: 4px;
+border-radius: 10px;
+margin-bottom: 10px;
+content: "";
+position: absolute;
+top: 115%;
+left: 39%;
+width: 50%;
+transition: 0.25s;
+box-shadow: 0 0 10px 0;
+}
+
+.icon {
+position: relative;
+}
+
+.status-text:hover {
+cursor: pointer;
+}
+
+.status-text .icon .creeper {
+color: #ffffff;
+height: 48px;
+margin: 7px;
+transition: 0.25s;
+}
+
+.status-text .icon {
+background-color: transparent;
+height: 54px;
+width: 54px;
+margin-left: 8px;
+margin-top: -6px;
+}
+
+.discord-text {
+color: #afa6a6;
+text-align: left;
+z-index: 100000;
+transition: 0.5s;
+display: flex;
+}
+
+.discord-box-container a {
+width: fit-content;
+display: block;
+margin-left: 50px;
+height: fit-content;
+}
+
+.discord-box-container {
+flex: 1;
+z-index: 1;
+}
+
+.discord-text:hover {
+cursor: pointer;
+}
+
+.discord-text .icon .discord {
+color: #ffffff;
+height: 55px;
+margin: 7px;
+transition: 0.25s;
+}
+
+.discord-text .icon {
+background-color: transparent;
+height: 54px;
+width: 54px;
+margin-right: 18px;
+margin-top: -10px;
+margin-left: -15px;
+}
+
+.status-text:hover .icon svg,
+.discord-text:hover .icon svg {
+margin-top: 4px;
+}
+
+.status-text:hover .icon:after,
+.discord-text:hover .icon:after {
+top: 119%;
+}
+
+.top-text {
+text-transform: uppercase;
+font-weight: 600;
+margin-top: 3.5px;
+font-size: 1rem;
+}
+
+.bottom-text {
+font-weight: 600;
+text-transform: uppercase;
+color: rgba(255, 255, 255, 0.75);
+font-size: 17.6px;
+font-size: 0.8rem;
+margin-top: 0;
+overflow: hidden;
+height: 20px;
+}
+
+.reel-1,
+.reel-2 {
+transition: 0.25s;
+}
+
+.reel-1 {
+margin-bottom: 10px;
+}
+
+.discord-text:hover .reel-1,
+.status-text:hover .reel-1 {
+margin-top: -15px;
+}
+
+.discord-text .top-text {
+margin-top: 1px;
+}
+
+.swal-overlay {
+z-index: 20000;
+}
+@media (min-width: 1600px) {
+.discord-text {
+  margin-left: 100px;
+}
+.status-text {
+  margin-right: 100px;
+}
+}
+
+@media (max-width: 992px) {
+.discord-box-container,
+.status-box-container {
+  display: none;
+}
+}
+
+/*---------- Tables ----------*/
+
+table {
+border: 4px solid #181818;
+}
+.table td,
+.table th {
+border-top: 4px solid #181818;
+}
+.table thead th {
+border-bottom: 4px solid #181818;
+}
+
+.table-responsive::-webkit-scrollbar-track,
+.table-responsive::-webkit-scrollbar-corner {
+background: transparent;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+background: #252525;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+background: #404040;
+}
+
+@media (min-width: 992px) {
+.d-lg-table-column {
+  display: table-column !important;
+}
+}
+
+/*---------- Alerts ----------*/
+
+.alert {
+border: none;
+color: rgb(189, 189, 189);
+padding: 0.75rem 1rem;
+background-color: #161616 !important;
+position: relative;
+padding-left: 3.7rem;
+border-radius: 0.15rem;
+}
+
+.alert-theme,
+.alert-dismissible .close:hover {
+color: #fff !important;
+}
+
+.card .alert {
+background-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+.alert:before {
+font-family: "Font Awesome 5 Free";
+font-weight: 900;
+color: #fff;
+padding: 0.8rem 0.8rem;
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+border-top-left-radius: 0.25rem;
+border-bottom-left-radius: 0.25rem;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+min-width: 2.7rem;
+max-width: 2.7rem;
+}
+
+.announcement-alert:before {
+display: none;
+}
+
+.announcement-alert {
+padding-left: 1rem;
+}
+
+.alert-success:before {
+content: "\f00c";
+background-color: #28a745;
+}
+
+.alert-primary:before {
+content: "\f105";
+background-color: #007bff;
+}
+
+.alert-warning:before {
+content: "\f12a";
+background-color: #b38706;
+}
+
+.alert-danger:before {
+content: "\f071";
+background-color: #dc3545;
+}
+
+.alert-info:before {
+content: "\f129";
+background-color: #17a2b8;
+}
+
+/*---------- Footer ----------*/
+
+.footer {
+margin-top: 3rem;
+}
+
+.footer .top-section {
+border-bottom: 3px solid rgba(255, 255, 255, 0.025);
+background-color: rgba(255, 255, 255, 0.01);
+}
+
+.footer .icon {
+color: rgb(189, 189, 189);
+transition: 0.25s;
+padding-right: 8px;
+}
+
+.footer .icon:hover {
+filter: brightness(85%);
+}
+
+.footer .bottom-bar {
+background-color: rgba(255, 255, 255, 0.01);
+}
+
+.footer-copyright {
+display: inline-block;
+font-weight: 500;
+padding: 1.5rem 0;
+font-size: 0.9rem;
+}
+
+.footer-copyright .site {
+color: rgba(255, 255, 255, 0.9);
+}
+.small-footer .credit-img {
+height: 40px;
+filter: grayscale(100%) brightness(0.25);
+margin-top: -0.3rem;
+}
+
+.footer-col {
+padding-top: 20px;
+}
+.footer-text-header {
+font-weight: 600;
+margin-bottom: 0.5rem;
+color: #fff;
+font-size: 1.6rem;
+position: relative;
+display: inline-block;
+}
+.footer-text-header:after {
+height: 7px;
+border-radius: 10px;
+margin-bottom: 10px;
+content: "";
+position: absolute;
+top: calc(50% - 3.5px);
+left: calc(100% + 1rem);
+width: 20px;
+box-shadow: 0 0 10px 0;
+}
+
+.footer-link:hover {
+filter: brightness(85%);
+color: rgb(189, 189, 189);
+}
+.footer-link,
+.footer-link:focus {
+color: rgb(189, 189, 189);
+display: block;
+}
+
+.footer-theme .container > .row {
+clear: both;
+}
+
+.other-btn i {
+margin-left: 5px;
+color: rgba(255, 255, 255, 0.7);
+transition: 0.25s;
+}
+
+.small-footer .small-section {
+padding-top: 1rem;
+background-color: rgba(255, 255, 255, 0.01);
+}
+
+.small-footer .footer-link {
+padding-right: 1.8rem;
+margin-bottom: 1.5rem;
+display: inline-block;
+color: rgba(255, 255, 255, 0.2);
+font-weight: 500;
+}
+
+.small-footer .footer-link:last-child {
+margin-right: 1rem;
+}
+
+.small-footer .icon-box {
+padding-left: 1rem;
+display: inline-block;
+}
+
+.small-footer .copyright-txt {
+color: rgba(255, 255, 255, 0.3);
+margin-bottom: 1.5rem;
+display: inline-block;
+margin-top: 0.1rem;
+font-weight: 500;
+}
+
+.small-footer .footer-copyright {
+padding: 0 !important;
+}
+
+.small-footer .icon {
+color: rgba(255, 255, 255, 0.3);
+}
+
+.small-footer .icon.bt {
+padding-left: 15px;
+border: none;
+background-color: rgba(0, 0, 0, 0);
+}
+
+@media (max-width: 992px) {
+.footer .footer-col {
+  padding: 15px;
+}
+.top-section {
+  padding: 1rem 0;
+}
+}
+
+@media (max-width: 767px) {
+.small-footer .container {
+  flex-direction: column;
+}
+}
+
+/* Fix footer not at bottom of page */
+
+body {
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+}
+
+.footer {
+margin-top: auto;
+}
+
+.footer-spacer {
+height: 4rem;
+}
+
+/*---------- Cards ----------*/
+
+.card {
+margin-bottom: 1.2rem;
+border-radius: 0.15rem;
+border-color: transparent;
+}
+
+.card-header {
+background-color: transparent !important;
+border-bottom: none;
+}
+
+.card-header:first-child {
+border-radius: 0.15rem 0.15rem 0 0;
+}
+
+.card-header .btn {
+text-transform: none;
+}
+
+.card-header.header-theme {
+font-weight: 600;
+font-size: 1.3rem;
+padding-bottom: 0;
+}
+
+.card-header a {
+color: #fff;
+}
+
+.card .card {
+background-color: rgba(255, 255, 255, 0.03);
+}
+
+.card-body {
+padding-top: 1rem;
+}
+
+/*---------- Modals ----------*/
+
+.modal-header {
+font-weight: 600;
+}
+
+.modal {
+z-index: 300000;
+}
+
+.modal-title {
+color: #fff !important;
+}
+
+@media (max-width: 575px) {
+.modal-dialog {
+  max-width: 85%;
+  margin: 3rem auto;
+}
+}
+
+.modal-backdrop {
+z-index: 250;
+}
+
+/*---------- Custom mobile nav menu ----------*/
+
+.overlay {
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+z-index: 100000;
+position: fixed;
+transition: 0.25s;
+display: none;
+opacity: 0;
+}
+
+.overlay.active {
+display: block;
+opacity: 1;
+}
+
+.block-display {
+display: block !important;
+}</style>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+		
+			:root {
+		        --p-color: #C88602;
+		    }
+		
+		    /* Primary Color */
+		    .discord-text .st0, .status-text path, .discord-icon .st0, .status-icon path {fill: var(--p-color) !important;}
+			.swal2-icon.swal2-info, .cobalt-update-box .update-icon, .header-theme, .news-title, .top-text, .error-title, .lr-title, .p-icon, .theme-text, .other-btn:after, .other-btn:focus:after, .footer-text-header:after, .widget-header-txt:after, .discord-text .icon:after, .status-text .icon:after, .wiki-page-card span strong, .dropdown-item.d-header, .rules-menu .active span, .rules-menu .active i, .welcome-title, .user-nav-link.active {color: var(--p-color) !important;}
+			a, a:hover, a:focus {color: var(--p-color)}
+			.color-overlay {background: linear-gradient(var(--p-color), #101010);}
+			.swal2-icon.swal2-info, .page-item.active .page-link, .user-nav-link.active, .profile-about-box, .rules-menu-link.active, .btn-success {border-color: var(--p-color) !important;}
+			.swal2-styled.swal2-confirm, .widget-header-txt:after, .discord-text .icon:after, .status-text .icon:after, .nav-link.store-link, .footer-text-header:after, .badge-theme, #toast-container, .progress-bar, .login-overlay, .register-overlay, .vote-tabs .btn.btn-theme.active, .p-color-overlay, .modal-header, .btn-theme, .button-checkbox>.active, .spoiler .spoiler-toggle, .spoiler .spoiler-title, .page-item.active .page-link, .btn.profile-btn.active:after, .cc-window.cc-floating .cc-highlight .cc-btn.cc-allow, .btn-success, .btn-success:hover, .btn-success:focus, .dropdown-item.active {background-color: var(--p-color) !important;}
+			.swal2-styled.swal2-confirm:hover, .spoiler .spoiler-toggle:hover, .spoiler .spoiler-title:hover, .btn-theme:hover {background-color: var(--p-color) !important; filter: brightness(0.85)}
+			.wiki-menu .active.dropdown-toggle::after {
+				border-top-color: var(--p-color) !important;
+				border-bottom-color: var(--p-color) !important;
+			}	
+            @media (max-width: 1100px) {.status-box-container .text, .discord-box-container .text {display: none}}		
+            .header {background-position: center center !important}
+            .header {background: url('//cdn.tebex.io/webstore/1228125/images/1228125-5b967f78a2c1482bd9a518e4e50d71b719427896.jpg') no-repeat;}
+
+            
+
+			/* Header */
+			.header:after {height: 227.5px; background: linear-gradient(rgba(0, 0, 0, 0.7), transparent);} .header:before {background: linear-gradient(rgba(0, 0, 0, 0.7), #101010);}
+
+
+			@media (min-width: 769px) {.header {height: 475px}}
+			@media (max-width: 768px) {.header {height: 340px}}
+		    @media (min-width: 769px) {.logo {height: 200px; margin-top: 127.5px}}
+		    @media (max-width: 768px) {.logo {height: 130px; margin-top: 90px}}
+		    .status-text, .discord-text {margin-top: 203.5px}
+		
+		</style>
+
+  <script type="text/javascript">
+   (function(c,l,a,r,i,t,y){
+       c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+       t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+   })(window, document, "clarity", "script", "fxlepb8eap");
+</script>
+</head>
+  <body>
+      
+      <div class="header-top-row">
+        <a class="btn-header-new" href="https://fakepixel.fun"><i class="fa-solid fa-house-chimney mr-1"></i> Back to home</a>
+        <a class="btn-header-new cart-toggler" href="#"><i class="fa-solid fa-cart-shopping mr-1"></i> Cart <span class="cart-badge">0</span></a>
+      </div>
+
+
+
+      <div class='color-overlay'>
+        <div class="header" id="header-pjs" style='opacity: 0.58; z-index: 1'></div>
+    </div>
+
+
+<div class="logo-ds-flex">
+<div class="status-box-container">
+<div class="status-text" onclick="copyToClipboard('#ip')">
+<div class="text">
+<div class="top-text"><span class="server-status">Loading...</span></div>
+<div class="bottom-text">
+<div class="reel-1"><span id="ip">mc.fakepixel.fun</span></div>
+<div class="reel-1">Click to copy IP</div>
+</div>
+</div>
+<div class="icon">
+<div class="icon-wrapper">
+<svg class="creeper" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9V344c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"/></svg>
+</div>
+</div>
+</div>
+</div>
+<div class="logo-container">
+<a id="logo-link" href="/">
+<img class="logo" alt="logo" src='//dunb17ur4ymx4.cloudfront.net/webstore/logos/db497a23fd826559a45c30f042ae81277d05e80a.png' />
+</a>
+</div>
+<div class="discord-box-container">
+<a href="https://discord.gg/fakepixel" target="_blank">
+<div class="discord-text">
+<div class="icon">
+<div class="icon-wrapper">
+<svg class="discord" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 245 240">
+<path class="st0" d="M104.4 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1.1-6.1-4.5-11.1-10.2-11.1zM140.9 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1s-4.5-11.1-10.2-11.1z">
+</path>
+<path class="st0" d="M189.5 20h-134C44.2 20 35 29.2 35 40.6v135.2c0 11.4 9.2 20.6 20.5 20.6h113.4l-5.3-18.5 12.8 11.9 12.1 11.2 21.5 19V40.6c0-11.4-9.2-20.6-20.5-20.6zm-38.6 130.6s-3.6-4.3-6.6-8.1c13.1-3.7 18.1-11.9 18.1-11.9-4.1 2.7-8 4.6-11.5 5.9-5 2.1-9.8 3.5-14.5 4.3-9.6 1.8-18.4 1.3-25.9-.1-5.7-1.1-10.6-2.7-14.7-4.3-2.3-.9-4.8-2-7.3-3.4-.3-.2-.6-.3-.9-.5-.2-.1-.3-.2-.4-.3-1.8-1-2.8-1.7-2.8-1.7s4.8 8 17.5 11.8c-3 3.8-6.7 8.3-6.7 8.3-22.1-.7-30.5-15.2-30.5-15.2 0-32.2 14.4-58.3 14.4-58.3 14.4-10.8 28.1-10.5 28.1-10.5l1 1.2c-18 5.2-26.3 13.1-26.3 13.1s2.2-1.2 5.9-2.9c10.7-4.7 19.2-6 22.7-6.3.6-.1 1.1-.2 1.7-.2 6.1-.8 13-1 20.2-.2 9.5 1.1 19.7 3.9 30.1 9.6 0 0-7.9-7.5-24.9-12.7l1.4-1.6s13.7-.3 28.1 10.5c0 0 14.4 26.1 14.4 58.3 0 0-8.5 14.5-30.6 15.2z">
+</path>
+</svg>
+</div>
+</div>
+<div class="text">
+<div class="top-text"><span class="discord-status">Loading...</span></div>
+<div class="bottom-text">
+<div class="reel-1">discord.gg/fakepixel</div>
+<div class="reel-1">Click to join</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div> 
+      
+
+
+<div class="cart-menu">
+    <div class="cart-header">
+        <div class="cart-header-text theme-text">Cart (0)</div>
+        <div class="currency">
+            <button type="button" class="btn btn-secondary ml-4 dropdown-toggle" data-toggle="dropdown">
+              USD
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                                                      <a class="dropdown-item" href="?currency=AUD">AUD</a>
+                                                                        <a class="dropdown-item" href="?currency=BRL">BRL</a>
+                                                                        <a class="dropdown-item" href="?currency=CAD">CAD</a>
+                                                                                                        <a class="dropdown-item" href="?currency=DKK">DKK</a>
+                                                                        <a class="dropdown-item" href="?currency=EUR">EUR</a>
+                                                                                                                                                                                                                                                                        <a class="dropdown-item" href="?currency=NOK">NOK</a>
+                                                                        <a class="dropdown-item" href="?currency=NZD">NZD</a>
+                                                                                                        <a class="dropdown-item" href="?currency=PLN">PLN</a>
+                                                                        <a class="dropdown-item" href="?currency=GBP">GBP</a>
+                                                                                                        <a class="dropdown-item" href="?currency=SEK">SEK</a>
+                                                                                                                                                                                                        <a class="dropdown-item active " href="?currency=USD">USD</a>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </ul>
+        </div>
+        <div id="cart-close" class="cart-close btn btn-secondary ml-2"><i class="fa-solid fa-xmark"></i></div>
+    </div>
+    <div class="cart-body">
+
+        
+Your cart is empy! Continue shopping and add some items before checkout.
+
+
+    </div>
+</div>
+<div class="overlay"></div>
+
+
+
+
+    <div class="container top-container mb-4">
+    
+    <div class="row">
+
+<div class="col-lg-3">
+
+    <div class="username-box d-flex">
+        <div class="skin">
+                                    <img src='https://mc-heads.net/body/JshKlsn/right' alt="Guest" />
+                                </div>
+        <div class="text flex-grow-1">
+            <div>            Guest
+            </div>
+             <a href="/login" class="btn btn-sm btn-secondary btn-log">Login</a>
+                    </div>
+    </div>
+
+       
+
+      <div class="user-nav">
+        <a class="user-nav-link" href="/">
+          Home
+        </a>
+                                              <a class=" user-nav-link" href="/category/2278501">Ranks</a>
+                                                                        <a class=" user-nav-link" href="/category/rank-upgrade">Rank Upgrade</a>
+                                                                        <a class=" user-nav-link" href="/category/gold">Gold</a>
+                                                                          <div class="dropdown">
+                        <a class="user-nav-link  dropdown-toggle" href="#" id="dropdownMenuButton" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Mystery Boxes
+                        </a>
+                        <div class="dropdown-menu ml-3" aria-labelledby="dropdownMenuButton">
+                                                        <a class="dropdown-item" href="/category/mystery-boxes">Mystery Boxes</a>                             <a class="dropdown-item" href="/category/gifts">Gifts</a>                         </div>
+                    </div>
+                                                                        <a class=" user-nav-link" href="/category/skyblock-gems">SkyBlock Gems</a>
+                                                                        <a class=" user-nav-link" href="/category/unban">Other</a>
+                                                                      <a class=" user-nav-link" href="/support">Support</a>
+                                
+                      </div>
+
+      <div class="card module">
+    <div class="card-header header-theme">Featured Package</div>
+    <div class="card-body">
+        <div class="featured-package">
+            <div class="image">
+                <a href="javascript:void(0);" data-remote="/package/5437290" class="toggle-modal">
+                    <img src="//dunb17ur4ymx4.cloudfront.net/packages/images/25f03d551b999318c43840f11a98bfefbefde85f.png"
+                        class="d-block ml-auto mr-auto toggle-tooltip img-rounded"
+                        title=" Click for more details" />
+                </a>
+            </div>
+            <div class="info">
+                <div class="text-center">
+                    <div class="name">VIP+ Rank [Lifetime]</div>
+                    <div class="price mb-2">
+                                                                        3.49 <small>USD</small>
+                                            </div>
+                </div>
+                <div class="button">
+                                        <a href="javascript::void(0);" data-remote="/package/5437290"
+                        class="btn btn-theme btn-sm btn-block toggle-modal">Buy</a>
+                                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card module">
+    <div class="card-header header-theme">
+        Server Status
+                        <span class="badge badge-success float-right">Online</span>
+                </div>
+    <div class="card-body">
+            mc.fakepixel.fun<br />
+                        748 / 1500
+                        players online.
+    </div>
+</div>
+<div class="card module">
+    <div class="card-header header-theme">Recent Payments</div>
+    <div class="card-body">
+                        <div class="mb-2 mt-2 top-donator d-flex">
+                <div class="avatar">
+                    <img src="https://cravatar.eu/avatar/Ujjaval/64" width="30" />
+                </div>
+                <div class="info ml-3">
+                    <div class="ign">
+                        Ujjaval
+                                            </div>
+                    <div class="extra">
+                                                VIP Rank [Lifetime]
+                                                                                            </div>
+                </div>
+            </div>
+                        <div class="mb-2 mt-2 top-donator d-flex">
+                <div class="avatar">
+                    <img src="https://cravatar.eu/avatar/RSGamerz/64" width="30" />
+                </div>
+                <div class="info ml-3">
+                    <div class="ign">
+                        RSGamerz
+                                            </div>
+                    <div class="extra">
+                                                1,000 GOLD
+                                                                                            </div>
+                </div>
+            </div>
+                        <div class="mb-2 mt-2 top-donator d-flex">
+                <div class="avatar">
+                    <img src="https://cravatar.eu/avatar/Winttery/64" width="30" />
+                </div>
+                <div class="info ml-3">
+                    <div class="ign">
+                        Winttery
+                                            </div>
+                    <div class="extra">
+                                                5.000 GOLD
+                                                                                            </div>
+                </div>
+            </div>
+                        <div class="mb-2 mt-2 top-donator d-flex">
+                <div class="avatar">
+                    <img src="https://cravatar.eu/avatar/_nxyx/64" width="30" />
+                </div>
+                <div class="info ml-3">
+                    <div class="ign">
+                        _nxyx
+                                            </div>
+                    <div class="extra">
+                                                1,000 GOLD
+                                                                                            </div>
+                </div>
+            </div>
+                        <div class="mb-2 mt-2 top-donator d-flex">
+                <div class="avatar">
+                    <img src="https://cravatar.eu/avatar/_nxyx/64" width="30" />
+                </div>
+                <div class="info ml-3">
+                    <div class="ign">
+                        _nxyx
+                                            </div>
+                    <div class="extra">
+                                                1,000 GOLD
+                                                                                            </div>
+                </div>
+            </div>
+                </div>
+</div><div class="card">
+    <div class="card-header header-theme">Community Goal</div>
+    <div class="card-body" style="width:auto;float:none;">
+        <div class="donation-goal" style="text-align:center;">
+                        <p>
+                
+            </p>
+            <p>
+                
+                                100% completed
+                            </p>
+            <div class="progress  ">
+                <div class="progress-bar bar" role="progressbar" style="width:100%;"></div>
+            </div>
+                    </div>
+    </div>
+</div><div class="card">
+    <div class="card-header header-theme">Top Customer</div>
+    <div class="card-body">
+                <div class="top-donator d-flex">
+            <div class="avatar">
+                <img src="https://minotar.net/body/oThornq/100.png" width="60">
+            </div>
+            <div class="info ml-3">
+                <div class="ign">oThornq</div>
+                <div class="amount">
+                                        Paid the most 
+                    
+                                        this year.
+                                    </div>
+            </div>
+        </div>
+            </div>
+</div>
+      
+
+      
+      </div>
+      <div class="col-lg-9">
+      
+      
+          
+
+      <div class="card">
+    <div class="card-header header-theme">Verify that you are you!</div>
+    <div class="card-body">
+      <!-- Wondering how to change the following html? Please read our documentation to move over to the new username.html variables - the loginform variable is now deprecated: https://docs.tebex.io/developers/templates/pages/username.html -->
+<form method="post">
+    <div class="username">
+        <div class="input-group">
+            <script type="text/javascript" src="https://www.google.com/recaptcha/api.js" async defer></script>
+            <script>
+                function Submit() {
+                    window.location.href = "verify.html?ign=" + document.getElementsByName("ign")[0].value;
+                }
+                </script>
+            <input type="number" name="ign" class="form-control input-lg form-control-lg" placeholder="Enter the code we will send you." />
+            <div class="input-group-append input-group-btn">
+                <button class="btn btn-success btn-lg" onclick="Submit()" type="submit">Continue<i class="fa fa-chevron-right ml-2" style="margin-left:10px;"></i></button>
+            </div>
+        </div>
+    </div>
+</form>
+
+    </div>
+</div>
+       
+    </div></div></div>
+
+      
+      <div class="footer small-footer">
+    <div class="small-section">
+        <div class="container d-flex">
+            <div class="footer-copyright flex-grow-1">
+                <span class="copyright-txt">© 2025 Fakepixel</span>
+            </div>
+            <div class="right">
+                                    <a class="footer-link terms-link" href="#">Terms</a>
+                    <a class="footer-link privacy-policy-link" href="#">Privacy</a>
+                    <a class="footer-link privacy-policy-link" href="#">Impressum</a>
+                     
+                
+                <div class="d-inline-block dropup">
+  <a href="#" class="footer-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Language
+  </a>
+  <div class="dropdown-menu">
+                          <a class="dropdown-item" href="?locale=en_US">English (US)</a>
+                    </div>
+</div>
+                
+            
+            </div>
+            <div class="end">
+                <a class="footer-link" href="https://coldfiredzn.com" rel="noopener" target="_blank">Designed by Coldfire</a>
+            </div>
+        </div>
+    </div>
+</div>
+      
+      
+      
+    
+    <div class="modal" id="popup-modal" tabindex="-1" role="dialog"></div>
+    
+          <script src="https://js.stripe.com/v2/"></script>
+    
+    <script>
+        var particles = "no";
+        var discord_server = "1160213017812807700";
+        var mc_server = "mc.fakepixel.fun";
+        var ds_box = "yes";
+        var ds_breakpoint = "1100";
+        var users_online = "users online";
+        var user_online = "user online";
+        var players_online = "players online";
+        var player_online = "player online";
+        var server_offline = "Server is offline";
+    </script> 
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.2.0/dist/sweetalert2.all.min.js" integrity="sha256-tGZXBB9uK3MK1zLsI8b/1gZYQcBl8TMTi52kA2RmEKc=" crossorigin="anonymous"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.39.3/tsparticles.min.js" integrity="sha256-CGTXk49NPei0eRo1PL2NVebBLfmfE7PQlx0ktUIpM+o=" crossorigin="anonymous"></script>
+
+    <script src="/templates/209/js/skin.min.js"></script>
+    <script src="/templates/209/js/site.js"></script>
+    <script>
+function copyToClipboard(element) {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val($(element).text()).select();
+    document.execCommand("copy");
+    $temp.remove();
+    Swal.fire({ title: "IP Copied", text: "Now go join the server!", icon: "success", confirmButtonText: "Close" });
+}
+
+$('.cart-toggler').click(function () {
+    $('.cart-menu').addClass("active");
+    $('.overlay').addClass("active");
+});
+$('#cart-close').click(function () {
+    $('.cart-menu').removeClass("active");
+    $('.overlay').removeClass("active");
+});
+
+
+    </script>
+    <script>
+        
+        if (ds_box == "yes") {
+
+if (window.screen.width >= ds_breakpoint) {
+
+    $(window).on("load", function () {
+
+
+                let serverStatusIp = mc_server;
+        $.ajax({
+            url: "https://api.mcsrvstat.us/2/" + serverStatusIp,
+            success: function (data) {
+                if (data.online) {
+                    let online = data.online;
+                    let playerCurrentCount = data.players.online;
+                    updateStatus(online, playerCurrentCount);
+                } else {
+                    let online = null;
+                    updateStatus(online);
+                }
+            },
+            error: function () {
+                $.ajax({
+                    url: "https://mcapi.us/server/status?ip=" + serverStatusIp,
+                    success: function (data) {
+                        if (data.online) {
+                            let online = data.online;
+                            let playerCurrentCount = data.players.now;
+                            updateStatus(online, playerCurrentCount);
+                        } else {
+                            let online = null;
+                            updateStatus(online);
+                        }
+                    },
+                });
+            },
+            timeout: 300000,
+        });
+        
+        
+        function updateStatus(online, current) {
+            let statusStatusDiv = $(".server-status");
+            if (online) {
+                statusStatusDiv.empty();
+                if ((current > 1) || (current < 1)) {
+                    statusStatusDiv.html("<span class='status-number'>" + current + "</span> " + players_online);
+                } else {
+                    statusStatusDiv.html("<span class='status-number'>" + current + "</span> " + player_online);
+                }
+            } else {
+                statusStatusDiv.empty();
+                statusStatusDiv.text(server_offline);
+            }
+        }
+
+        let discordStatusID = discord_server;
+        $.ajax({
+            url: "https://discord.com/api/guilds/" + discordStatusID + "/embed.json",
+            success: function (data) {
+                let presence_count = data.presence_count;
+                updateDiscordStatus(presence_count);
+            },
+            error: function () {},
+            timeout: 300000,
+        });
+
+        function updateDiscordStatus(presence_count) {
+            let discordStatusDiv = $(".discord-status");
+            discordStatusDiv.empty();
+            if ((presence_count > 1) || (presence_count < 1)) {
+                discordStatusDiv.html("<span class='status-number'>" + presence_count + "</span> " + users_online);
+            } else {
+                discordStatusDiv.html("<span class='status-number'>" + presence_count + "</span> " + user_online);
+            }
+        }
+
+    });
+
+}
+
+}
+
+if (particles == "yes") {
+    $(window).on("load", function () {
+        tsParticles.load("header-pjs", {
+    "fullScreen": {
+        "enable": false
+    },
+    "particles": {
+        "number": {
+            "value": 30,
+            "density": {
+                "enable": true,
+                "valueArea": 800
+            }
+        },
+        "color": {
+            "value": "#ffffff"
+        },
+        "shape": {
+            "type": "circle",
+            "stroke": {
+                "width": 0,
+                "color": "#000000"
+            },
+            "polygon": {
+                "nbSides": 5
+            },
+            "image": {
+                "src": "img/github.svg",
+                "width": 100,
+                "height": 100
+            }
+        },
+        "opacity": {
+            "value": 0.9,
+            "random": false,
+            "anim": {
+                "enable": false,
+                "speed": 1,
+                "opacityMin": 0.1,
+                "sync": false
+            }
+        },
+        "size": {
+            "value": 4,
+            "random": true,
+            "anim": {
+                "enable": false,
+                "speed": 40,
+                "sizeMin": 0.1,
+                "sync": false
+            }
+        },
+        "lineLinked": {
+            "enable": false,
+            "distance": 150,
+            "color": "#ffffff",
+            "opacity": 0.4,
+            "width": 1
+        },
+        "move": {
+            "enable": true,
+            "speed": 2,
+            "direction": "top",
+            "random": false,
+            "straight": false,
+            "outMode": "out",
+            "bounce": false,
+            "attract": {
+                "enable": false,
+                "rotateX": 600,
+                "rotateY": 1200
+            }
+        }
+    },
+    "interactivity": {
+        "detectOn": "canvas",
+        "events": {
+            "onhover": {
+                "enable": false,
+                "mode": "grab"
+            },
+            "onclick": {
+                "enable": false,
+                "mode": "push"
+            },
+            "resize": true
+        },
+        "modes": {
+            "grab": {
+                "distance": 140,
+                "lineLinked": {
+                    "opacity": 1
+                }
+            },
+            "bubble": {
+                "distance": 400,
+                "size": 40,
+                "duration": 2,
+                "opacity": 8,
+                "speed": 3
+            },
+            "repulse": {
+                "distance": 200,
+                "duration": 0.4
+            },
+            "push": {
+                "particlesNb": 4
+            },
+            "remove": {
+                "particlesNb": 2
+            }
+        }
+    },
+    "retinaDetect": true
+});
+    });
+}
+    </script>
+
+     <script>
+            jQuery(function(){
+                var countdowns = $(".countdown-to");
+                countdowns.each(function(){
+                   setInterval(function(ele) {
+                       timeLeft = parseInt(ele.attr("data-countdown"));
+                       if (timeLeft == 0) {
+                           ele.html("Time Expired!");
+                       } else {
+                       timeLeft--;
+                       ele.attr("data-countdown", timeLeft);
+                      var days = Math.floor(timeLeft / (60 * 60 * 24));
+                      var hours = Math.floor((timeLeft % (60 * 60 * 24)) / (60 * 60));
+                      var minutes = Math.floor((timeLeft % (60 * 60)) / (60));
+                      var seconds = Math.floor((timeLeft % 60));
+                      ele.html(days + "d " + hours + "h " + minutes + "m " + seconds + "s");
+                       }
+                   }, 1000, jQuery(this));
+                });
+            });
+
+        </script>
+  <script>
+    jQuery(".card-container").eq(0).remove();
+</script>
+<script type="text/javascript" src="/assets/js/discord.js"></script>
+<div id="waiting-overlay" style="display: none;">
+    <i class="fa fa-cog fa-spin fa-3x"></i>
+</div>
+
+<!--
+    Removal of the Tebex footer violates our Terms & Conditions.
+    Due to Tebex being the Merchant of Record, the footer is a contractual requirement by our payment processing partners such as VISA & Mastercard.
+    Any attempt to hide or make the inner text of the footer unreadable will result in an immediate lock of your store & available funds with no exceptions.
+    We perform random checks on all stores to ensure you are abiding by this requirement.
+    We’re happy for you to change the colors and max-width of the footer to suit your design requirements, which you can learn how to do so by reading the documentation available at https://docs.tebex.io/developers/templates/footer
+-->
+<tebex-footer>
+    <template shadowrootmode="open">
+        <div class="tebex-footer-wrapper tebex-footer-wrapper-dark">
+            <div class="tebex-footer-inner">
+                <div class="tebex-footer-image">
+                    <a href="https://www.tebex.io" target="_blank">
+                        <svg width="61" height="29" viewBox="0 0 61 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.22379 7.36903C8.42455 5.55275 10.5991 5.02655 10.5991 5.02655C10.5991 5.02655 6.44895 4.02049 6.44895 0C6.44895 4.02049 2.29644 5.02655 2.29644 5.02655C2.29644 5.02655 4.47176 5.55275 5.67331 7.36903H0V14.3322L1.28979 12.1758H3.86857V24.1932L9.02693 29V14.2859C7.71147 13.7208 5.8217 12.2842 5.14472 11.1885C6.30056 11.5136 7.85104 11.9411 9.05821 12.1766H12.8963V7.36903H7.22379Z" />
+                            <g clip-path="url(#clip0_995_406)">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M35.9134 14.0983C36.5813 13.2542 37.62 12.7915 38.8665 12.7915H38.868C41.2702 12.7915 42.9475 14.4698 42.9475 16.8028C42.9475 19.1358 41.2194 20.8283 38.8357 20.8283C37.5616 20.8283 36.5474 20.3884 35.8888 19.5529L35.8457 20.6418H34.0253V9.87207H35.9134V14.0983ZM38.7342 19.3536C40.1961 19.3536 41.2163 18.3259 41.2163 16.8555C41.2163 15.3509 40.3084 14.3417 38.828 14.3417C37.3477 14.3417 36.3135 15.3381 36.3135 16.8555C36.3135 18.3728 37.2722 19.3536 38.7342 19.3536ZM22.7747 19.1045C22.3069 19.4347 21.9345 19.5628 21.4436 19.5628C20.7204 19.5628 20.3049 19.1557 20.3049 18.444V14.4271H23.3395V12.8812H20.3049V10.8742H18.4167V12.8798H17.1041L16.6763 14.4257H18.4167V18.4583C18.4167 20.2162 19.4277 21.1841 21.2651 21.1841C22.1038 21.1841 22.8517 20.945 23.5488 20.4525L23.5996 20.4169L22.8486 19.0518L22.7747 19.1031V19.1045ZM28.2885 12.7303C25.874 12.7303 24.1228 14.4242 24.1228 16.7572C24.1228 19.2127 25.7894 20.7984 28.367 20.7984C29.8396 20.7984 30.9399 20.3827 31.8263 19.4902L31.8725 19.4447L30.8707 18.3273L30.8107 18.3814C30.1197 19.0063 29.4057 19.2853 28.4916 19.2853C27.0574 19.2853 26.1756 18.5579 26.0017 17.2327H32.2049V17.1615C32.2049 17.0903 32.2079 17.0234 32.2125 16.9565C32.2172 16.8868 32.2202 16.817 32.2202 16.743C32.2202 14.3061 30.6768 12.7303 28.2885 12.7303ZM26.0402 16.0882C26.2803 14.9794 27.1482 14.2677 28.2731 14.2677C29.398 14.2677 30.1582 14.9295 30.3244 16.0882H26.0402ZM48.0719 12.7303C45.6575 12.7303 43.9062 14.4242 43.9062 16.7572C43.9062 19.2127 45.5728 20.7984 48.1504 20.7984C49.6231 20.7984 50.7234 20.3827 51.6097 19.4902L51.6559 19.4447L50.6541 18.3273L50.5941 18.3814C49.9032 19.0063 49.1891 19.2853 48.275 19.2853C46.8408 19.2853 45.9591 18.5579 45.7852 17.2327H51.9883V17.1615C51.9883 17.0903 51.9914 17.0234 51.996 16.9565C52.0006 16.8868 52.0037 16.817 52.0037 16.743C52.0037 14.3061 50.4602 12.7303 48.0719 12.7303ZM48.0565 14.2662C49.1984 14.2662 49.9416 14.9281 50.1078 16.0868H45.8237C46.0637 14.9779 46.9316 14.2662 48.0565 14.2662ZM60.2258 12.8798L57.2973 16.5708L60.5566 20.6418H58.313L56.2078 17.8633L54.1488 20.6418H52.016L55.1645 16.6733L52.1576 12.8798H54.4012L56.254 15.4078L58.0914 12.8798H60.2258Z" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_995_406">
+                                    <rect width="43.8803" height="11.3121" fill="white" transform="translate(16.6763 9.87207)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="tebex-footer-text">
+                    This website and its checkout process is owned &amp; operated by Tebex Limited, who handle product fulfilment, billing support and refunds.
+                </div>
+
+                <div class="tebex-footer-links">
+                    <a href="/terms/impressum">Impressum</a>
+                    <a href="/terms/checkout">Terms & Conditions</a>
+                    <a href="/terms/privacy">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+        <style>
+            :host {
+                all: unset !important;
+                zoom: 1 !important;
+                width: 100% !important;
+                min-height: 35px !important;
+                box-sizing: border-box !important;
+                z-index: 9999999999 !important;
+            }
+
+            :host([absolute]) {
+                position: absolute !important;
+                bottom: 0 !important;
+            }
+
+            * {
+                box-sizing: border-box !important;
+            }
+
+            .tebex-footer-wrapper {
+                all: unset !important;
+                display: flex !important;
+                width: 100% !important;
+                min-height: 35px !important;
+                padding: 2px 32px !important;
+                font-size: 11px !important;
+                font-weight: 400 !important;
+                font-family: Arial, sans-serif !important;
+                box-sizing: border-box !important;
+                --text: var(--tebex-legal-footer-text-color, #6a6a6a) !important;
+                --bg: var(--tebex-legal-footer-background-color, #fff) !important;
+                color: var(--text) !important; /* fallback */
+                color: rgb(from var(--text) r g b / 1) !important;
+                background-color: var(--bg) !important; /* fallback */
+                background-color: rgb(from var(--bg) r g b / 1) !important;
+                border-top: 1px solid var(--tebex-legal-footer-border-color, #efefef) !important;
+            }
+
+            .tebex-footer-wrapper-dark {
+                --text: var(--tebex-legal-footer-text-color, #b2b2b2) !important;
+                --bg: var(--tebex-legal-footer-background-color, #2e2e2e) !important;
+                border-color: var(--tebex-legal-footer-border-color, #404040) !important;
+            }
+
+            .tebex-footer-inner {
+                width: 100% !important;
+                height: 100% !important;
+                max-width: var(--tebex-legal-footer-max-width, 100%) !important; /* fallback */
+                max-width: max(var(--tebex-legal-footer-max-width, 100%), 320px) !important;
+                margin: 0 auto !important;
+                display: flex !important;
+                flex-wrap: wrap !important;
+                align-items: center !important;
+                container-type: inline-size !important;
+            }
+
+            .tebex-footer-image {
+                padding-right: 32px !important;
+
+                svg path {
+                    fill: var(--tebex-legal-footer-logo-color, #9C9FA9) !important; 
+                }
+            }
+
+            .tebex-footer-text {
+                flex-grow: 1 !important;
+                padding-right: 32px !important;
+                color: inherit !important;
+                margin-top: 2px !important;
+            }
+
+            .tebex-footer-links {
+                margin-top: 2px !important;
+            }
+
+            .tebex-footer-links a {
+                color: inherit !important;
+                text-decoration: underline !important;
+            }
+
+            .tebex-footer-links > a:not(:last-child) {
+                margin-right: 12px !important;
+            }
+
+            @media screen and (max-width: 900px) {
+                .tebex-footer-wrapper {
+                    min-height: 70px !important;
+                    padding: 8px 16px !important;
+                    flex-wrap: wrap !important;
+                }
+
+                .tebex-footer-image {
+                    display: none !important;
+                }
+
+                .tebex-footer-links {
+                    margin-top: 4px !important;
+                    min-width: unset !important;
+                }
+            }
+
+            @container (max-width: 900px) {
+                .tebex-footer-image {
+                    display: none !important;
+                }
+            }
+
+            @media screen and (max-width: 600px) {
+                .tebex-footer-wrapper{
+                    min-height: 80px !important;
+                    padding: 4px 16px !important;
+                }
+            }
+        </style>
+    </template>
+</tebex-footer>
+
+<script type="text/javascript">
+    (() => {
+
+        const notAllowed = () => {
+            const err = 'Removal of the Tebex footer violates our Terms & Conditions. Please refer to the documentation at https://docs.tebex.io/developers/templates/footer';
+            console.warn(err);
+        };
+
+        // Used to access DOM methods that are gated externally
+        const SHADOW_ROOT = Symbol();
+        const ATTACH_SHADOW = Symbol();
+        const QUERY_SELECTOR = Symbol();
+        const SET_ATTRIBUTE = Symbol();
+        const REMOVE_ATTRIBUTE = Symbol();
+        const GATE_ON = Symbol();
+
+        class TebexFooter extends HTMLElement {
+            constructor() {
+                super();
+
+                this[SHADOW_ROOT] = this.shadowRoot;
+                this[ATTACH_SHADOW] = this.attachShadow;
+                this[QUERY_SELECTOR] = this.querySelector;
+                this[SET_ATTRIBUTE] = this.setAttribute;
+                this[REMOVE_ATTRIBUTE] = this.removeAttribute;
+                this[GATE_ON] = true;
+
+                // Prevent shadow DOM access
+                this.attachShadow = notAllowed;
+                Object.defineProperty(this, 'shadowRoot', {
+                    get: () => null,
+                    set: notAllowed
+                });
+
+                // Polyfill for declarative shadow DOM
+                if (!this[SHADOW_ROOT]) {
+                    const template = this[QUERY_SELECTOR]('template[shadowrootmode]');
+                    const mode = template.getAttribute('shadowrootmode');
+                    const shadowRoot = this[ATTACH_SHADOW]({ mode });
+                    shadowRoot.appendChild(template.content);
+                    this[SHADOW_ROOT] = shadowRoot;
+                    template.remove();
+                }
+
+                // Warn against edits to internal shadow DOM content
+                const observer = new MutationObserver((mutationList, observer) => {
+                    if (this[GATE_ON])
+                        notAllowed();
+                    this[GATE_ON] = true;
+                });
+                const observerConfig = {
+                    attributes: true,
+                    childList: true,
+                    characterData: true,
+                    subtree: true
+                };
+                observer.observe(this[SHADOW_ROOT], observerConfig);
+
+                this.#reposition();
+
+                document.addEventListener('DOMContentLoaded', () => {
+                    this.#reposition();
+                });
+
+                function debounce(func) {
+                    var timer;
+                    return function (event) {
+                        if (timer) clearTimeout(timer);
+                        timer = setTimeout(func, 100, event);
+                    };
+                }
+
+                addEventListener('resize', debounce(() => {
+                    this.#reposition();
+                }));
+
+                addEventListener('scroll', debounce(() => {
+                    this.#reposition();
+                }));
+            }
+
+            disconnectedCallback() {
+                notAllowed();
+            }
+
+            #reposition() {
+                this[GATE_ON] = false;
+                if (document.body.clientHeight < (window.innerHeight - this.clientHeight))
+                    this[SET_ATTRIBUTE]('absolute', '');
+                else
+                    this[REMOVE_ATTRIBUTE]('absolute');
+            }
+        }
+
+        customElements.define('tebex-footer', TebexFooter);
+    })();
+</script>
+
+<script type="text/javascript">
+    window.nSureAsyncInit = function(deviceId) {
+        window.nSureSDK.init({
+            appId: 'Z620Q2525RT9DWKA',
+            storeInfo: {
+                id: '1228125',
+                type: 'storeFront'
+            }
+        });
+
+        document.cookie = "deviceId="+deviceId+"; path=/";
+
+                fetch('/nsure/fingerprint/' + deviceId, {
+            'method': 'PUT',
+            'body': new URLSearchParams([['fingerprint', deviceId]])
+        }).catch(function (error) {
+        });
+            }
+</script>
+<script type="text/javascript" src="https://nsure.tebex.io/sdk.js">
+</script>
+</body>
+</html>

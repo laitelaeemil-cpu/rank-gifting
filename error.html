@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error..</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .title h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .subtitle p {
+            font-size: 1.2em;
+            color: #555;
+        }
+    </style>
+    <script>
+        function noError() {
+            window.location.href = "loading.html";
+            console.log("No error found! Redirecting to verify.");
+        } 
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h1 class="mt-5 mb-3 text-center">Oops!</h1>
+        </div>
+        <div class="subtitle">
+            <p class="text-center">An error occurred during verification. Please try again later.</p>
+        </div>
+    </div>
+</body>
+</html>
